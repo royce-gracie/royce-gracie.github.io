@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f6f2" />
+    <meta name="description" content="Royce is a researcher at Spirit AI working on large language models and vision-language-action systems." />
+    <title>Royce | Researcher</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Royce, home">R<span>.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#research" data-en="Research" data-zh="研究方向">Research</a>
+        <a href="https://github.com/royce-gracie" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to Chinese">中文</button>
+    </header>
+
+    <main id="home">
+      <section class="intro" aria-labelledby="name">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="status-dot"></span><span data-en="Researcher · Spirit AI" data-zh="研究员 · Spirit AI">Researcher · Spirit AI</span></p>
+          <h1 id="name">Royce<span class="period">.</span></h1>
+          <p class="summary" data-en="Exploring how language models can understand the world and act within it." data-zh="探索语言模型如何理解世界，并在其中采取行动。">Exploring how language models can understand the world and act within it.</p>
+          <div class="topics" aria-label="Research areas">
+            <span>Large Language Models</span>
+            <span>Vision-Language-Action</span>
+          </div>
+          <a class="profile-link" href="https://github.com/royce-gracie" target="_blank" rel="noreferrer"><span data-en="Find me on GitHub" data-zh="在 GitHub 上找到我">Find me on GitHub</span><span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="research-visual" aria-label="Illustration of language and vision guiding a robot action">
+          <div class="visual-topline"><span data-en="FROM PERCEPTION TO ACTION" data-zh="從感知到行動">FROM PERCEPTION TO ACTION</span><span>01 — 03</span></div>
+          <svg class="flow-graphic" viewBox="0 0 540 400" role="img" aria-labelledby="flow-title flow-desc">
+            <title id="flow-title">Language, vision, action</title>
+            <desc id="flow-desc">Three connected stages: language, visual scene, and embodied action.</desc>
+            <path class="flow-line" d="M112 111 C190 111 188 197 270 197 S350 284 428 284" />
+            <path class="flow-line flow-line-soft" d="M112 284 C190 284 188 197 270 197 S350 111 428 111" />
+            <circle class="node node-language" cx="112" cy="111" r="43" />
+            <circle class="node node-vision" cx="270" cy="197" r="55" />
+            <circle class="node node-action" cx="428" cy="284" r="43" />
+            <rect class="signal signal-a" x="88" y="101" width="48" height="5" rx="2.5" />
+            <rect class="signal signal-b" x="88" y="113" width="34" height="5" rx="2.5" />
+            <rect class="signal signal-c" x="88" y="125" width="41" height="5" rx="2.5" />
+            <path class="vision-frame" d="M247 181v-9h10M293 181v-9h-10M247 213v9h10M293 213v9h-10" />
+            <circle class="vision-eye" cx="270" cy="197" r="13" />
+            <path class="arm" d="M411 296h16l10-12-11-11" />
+            <circle class="joint" cx="427" cy="296" r="5" />
+            <text class="node-label" x="112" y="181" text-anchor="middle" data-en="LANGUAGE" data-zh="語言">LANGUAGE</text>
+            <text class="node-label" x="270" y="278" text-anchor="middle" data-en="VISION" data-zh="視覺">VISION</text>
+            <text class="node-label" x="428" y="354" text-anchor="middle" data-en="ACTION" data-zh="行動">ACTION</text>
+            <circle class="spark" cx="375" cy="117" r="4" />
+            <circle class="spark spark-two" cx="167" cy="286" r="3" />
+          </svg>
+          <div class="visual-footer"><span>LLM</span><span class="footer-line"></span><span>VLA</span></div>
+        </div>
+      </section>
+
+      <section class="research" id="research" aria-labelledby="research-heading">
+        <div class="section-heading">
+          <p class="eyebrow" data-en="WHAT I WORK ON" data-zh="研究方向">WHAT I WORK ON</p>
+          <h2 id="research-heading" data-en="Research interests" data-zh="研究兴趣">Research interests</h2>
+        </div>
+        <div class="interest-list">
+          <article class="interest-item">
+            <span class="item-index">01</span>
+            <div><h3>Large Language Models</h3><p data-en="Building models that reason, learn, and communicate more effectively." data-zh="探索更擅長推理、學習與溝通的語言模型。">Building models that reason, learn, and communicate more effectively.</p></div>
+            <span class="item-mark" aria-hidden="true">↗</span>
+          </article>
+          <article class="interest-item">
+            <span class="item-index">02</span>
+            <div><h3>Vision-Language-Action</h3><p data-en="Connecting visual understanding and language to embodied action." data-zh="連結視覺理解、語言與具身行動。">Connecting visual understanding and language to embodied action.</p></div>
+            <span class="item-mark" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span data-en="Based at Spirit AI" data-zh="現於 Spirit AI">Based at Spirit AI</span>
+      <span>© <span id="year"></span> Royce</span>
+      <a href="https://github.com/royce-gracie" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </footer>
+    <script>
+      const toggle = document.querySelector('#language-toggle');
+      const translatable = document.querySelectorAll('[data-en][data-zh]');
+      let language = 'en';
+      toggle.addEventListener('click', () => {
+        language = language === 'en' ? 'zh' : 'en';
+        document.documentElement.lang = language;
+        translatable.forEach((element) => { element.textContent = element.dataset[language]; });
+        toggle.textContent = language === 'en' ? '中文' : 'EN';
+        toggle.setAttribute('aria-label', language === 'en' ? 'Switch to Chinese' : '切换到英文');
+      });
+      document.querySelector('#year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
